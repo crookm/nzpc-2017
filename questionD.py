@@ -15,7 +15,8 @@ def check_notes(notes):
 			last_note = note
 		else:
 			difference = values[note] - values[last_note]
-			print(abs(difference))
+			if values[note] < values[last_note]:
+				difference -= 1
 			if abs(difference) not in acceptable_difference:
 				print("Ouch! That hurts my ears!")
 				return
